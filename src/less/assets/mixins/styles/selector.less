@@ -1,0 +1,20 @@
+.non-select() {
+  .user-select(none);
+}
+
+.user-select(@selector) {
+  -webkit-touch-callout: @selector;
+  ._user-select(-webkit-, @selector);
+  ._user-select(-khtml-, @selector);
+  ._user-select(-moz-, @selector);
+  ._user-select(-ms-, @selector);
+  ._user-select( @selector);
+}
+
+._user-select(@prefix,@selector) {
+  @{prefix}user-select: @selector;
+}
+
+._user-select(@selector) {
+  user-select: @selector;
+}

@@ -1,0 +1,47 @@
+.size(@s) {
+  .size(@s, @s);
+}
+
+.size(@w, @h) {
+  width: @w;
+  height: @h;
+}
+
+.full-size() {
+  .size(100%);
+}
+
+.full-cover() {
+  .full-size();
+  left: 0;
+  top: 0;
+}
+
+.full-cover(@position) {
+  position: @position;
+  .full-size();
+  left: 0;
+  top: 0;
+}
+
+.center-element(@w, @h){
+  position: absolute;
+  .size(@w,@h);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+// Box sizing
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+  -moz-box-sizing: @boxmodel;
+  box-sizing: @boxmodel;
+}
+
+.border-box(){
+  .box-sizing(border-box);
+}

@@ -1,0 +1,48 @@
+.transition (@value1,@value2:X,...) {
+  @value: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+  .__transform(-webkit-, @value);
+  .__transform(-moz-, @value);
+  .__transform(-ms-, @value);
+  .__transform(-o-, @value);
+  .__transform(@value);
+}
+
+.__transform(@prefix, @value) {
+    @{prefix}transition+: ~`"@{value}".replace(/(transform|filter)/g, '@{prefix}$1')`;
+}
+
+.__transform(@value) {
+  transition+: ~`"@{value}".replace(
+        /cubic-bezier\(([^,)]+)[\s,]{0,2}([^,)]+)[\s,]{0,2}([^,)]+)[\s,]{0,2}([^,)]+)[\s,]{0,2}\)/gmi
+        , "cubic-bezier($1|$2|$3|$4)")
+      .split(',')
+      .reduce(function (last, item) {
+        last += last == '' ? '' : ', ';
+        if (/(transform|filter)/.test(item)) {
+          last += ['-webkit-', '-moz-', '-ms-', '-o-', ''].reduce(function (l, i) {
+            l += l == '' ? '' : ', ';
+            return l + item.replace(/(transform|filter)/gm, i + '$1');
+          }, '');
+        } else {last += item;}
+        return last;
+      }, '').replace(
+        /cubic-bezier\(([^,)]+)[|]{1}([^,)]+)[|]{1}([^,)]+)[|]{1}([^,)]+)\)/gmi
+        , "cubic-bezier($1, $2, $3, $4)")`;
+  //transition+: @value;
+}
+
+.transition-property(@transition-property) {
+  -webkit-transition-property: @transition-property;
+  transition-property: @transition-property;
+}
+
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+  transition-delay: @transition-delay;
+}
+
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+
+  transition-duration: @transition-duration;
+}

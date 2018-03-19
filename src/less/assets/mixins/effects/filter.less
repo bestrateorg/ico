@@ -1,0 +1,36 @@
+.filter(@str) {
+  -webkit-filter+_: @str;
+  filter+_: @str;
+}
+
+.blur(@pixel) {
+  .filter(blur(@pixel));
+}
+
+.contrast(@percent) {
+  .filter(contrast(@percent));
+}
+
+.grayscale(@percent){
+  .filter(grayscale(@percent));
+}
+
+.sepia(@percent){
+  .filter(sepia(@percent));
+}
+
+.saturate(@percent){
+  .filter(saturate(@percent));
+}
+
+.invert(@percent){
+  .filter(invert(@percent));
+}
+
+.brightness(@percent){
+  .filter(brightness(@percent));
+}
+
+.hue-rotate(@deg) {
+  .filter(hue-rotate(@deg));
+}

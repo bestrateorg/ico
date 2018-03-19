@@ -1,0 +1,14 @@
+.keyframes(@name, @rules) {
+  @-webkit-keyframes @name {
+    @rules();
+  }
+  @-moz-keyframes @name {
+    @rules();
+  }
+  @-o-keyframes @name {
+    @rules();
+  }
+  @keyframes @name {
+    @rules();
+  }
+}

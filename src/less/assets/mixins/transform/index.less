@@ -1,0 +1,92 @@
+.transform(@str) {
+  -webkit-transform+_: @str;
+  -moz-transform+_: @str; //
+  -ms-transform+_: @str; // IE9 only
+  -o-transform+_: @str; //
+  transform+_: @str;
+}
+
+// Transformations
+.scale(@ratio) {
+  .transform(scale(@ratio));
+}
+
+.scale(@ratioX; @ratioY) {
+  .transform(scale(@ratioX, @ratioY));
+}
+
+.scale3d(@ratioX;@ratioY;@ratioZ) {
+  .transform(scale3d(@ratioX, @ratioY, @ratioZ));
+}
+
+.scaleX(@ratio) {
+  .transform(scaleX(@ratio));
+}
+
+.scaleY(@ratio) {
+  .transform(scaleY(@ratio));
+}
+
+.skew(@x; @y) {
+  .transform(skewX(@x));
+  .transform(skewY(@y));
+}
+
+.translate(@x; @y) {;
+  .transform(translate(@x, @y));
+}
+
+.translateZ(@z) {
+  .transform(translateZ(@z));
+}
+
+.translate3d(@x; @y; @z) {;
+  .transform(translate3d(@x, @y, @z));
+}
+
+.rotate(@degrees) {;
+  .transform(rotate(@degrees));
+}
+
+.rotateX(@degrees) {;
+  .transform(rotateX(@degrees));
+}
+
+.rotateY(@degrees) {
+  .transform(rotateY(@degrees));
+}
+
+.rotateZ(@degrees) {
+  .transform(rotateZ(@degrees));
+}
+
+.perspective(@perspective) {
+  -webkit-perspective: @perspective;
+  -moz-perspective: @perspective;
+  perspective: @perspective;
+}
+
+.perspective-origin(@perspective) {
+  -webkit-perspective-origin: @perspective;
+  -moz-perspective-origin: @perspective;
+  perspective-origin: @perspective;
+}
+
+//<длина> | <проценты> | left | center | right
+//<длина> | <проценты> | top | center | bottom
+// Координата по оси Z. Может задаваться только в любых корректных единицах для измерения длины (исключая проценты).
+.transform-origin(@x, @y, @z) {
+  .transform-origin(@x @y @z);
+}
+
+.transform-origin(@x, @y) {
+  .transform-origin(@x @y);
+}
+
+.transform-origin(@origin) {
+  -webkit-transform-origin: @origin;
+  -moz-transform-origin: @origin;
+  -ms-transform-origin: @origin; // IE9 only
+  -o-transform-origin: @origin; // IE9 only
+  transform-origin: @origin;
+}

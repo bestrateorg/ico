@@ -1,0 +1,75 @@
+// Animations
+
+.animation(@name, @duration, @timing-function, @delay, @iteration-count, @direction) {
+  .animation(@name @duration @timing-function @delay @iteration-count @direction);
+}
+
+.animation(@animation) {
+  -webkit-animation: @animation;
+  -moz-animation: @animation;
+  -ms-animation: @animation;
+  -o-animation: @animation;
+  animation: @animation;
+}
+
+.animation-name(@name) {
+  -webkit-animation-name: @name;
+  -moz-animation-name: @name;
+  -o-animation-name: @name;
+  animation-name: @name;
+}
+
+.animation-duration(@duration) {
+  -webkit-animation-duration: @duration;
+  -moz-animation-duration: @duration;
+  -o-animation-duration: @duration;
+  animation-duration: @duration;
+}
+
+.__animation-timing-function__for__old(@timing-function) {
+  -webkit-animation-timing-function: ~`"@{timing-function}".replace(/cubic-bezier\(([0-9.]+)[^0-9]+([0-9.]+)[^0-9]+([0-9.]+)[^0-9]+([0-9]+)+\.[0-9]+[^0-9]*\)/, 'cubic-bezier($1, $2, $3, $4)')`;
+}
+
+.animation-timing-function(@timing-function) {
+  .__animation-timing-function__for__old(@timing-function);
+  -webkit-animation-timing-function: @timing-function;
+  -moz-animation-timing-function: @timing-function;
+  -o-animation-timing-function: @timing-function;
+  animation-timing-function: @timing-function;
+}
+
+.animation-delay(@delay) {
+  -webkit-animation-delay: @delay;
+  -moz-animation-delay: @delay;
+  -o-animation-delay: @delay;
+  animation-delay: @delay;
+}
+
+.animation-iteration-count(@iteration-count) {
+  -webkit-animation-iteration-count: @iteration-count;
+  -moz-animation-iteration-count: @iteration-count;
+  -o-animation-iteration-count: @iteration-count;
+  animation-iteration-count: @iteration-count;
+}
+
+.animation-direction(@direction) {
+  -webkit-animation-direction: @direction;
+  -moz-animation-direction: @direction;
+  -o-animation-direction: @direction;
+  animation-direction: @direction;
+}
+
+// none|forwards|backwards|both|initial|inherit;
+.animation-fill-mode(@mode) {
+  -webkit-animation-fill-mode: @mode;
+  -moz-animation-fill-mode: @mode;
+  -o-animation-fill-mode: @mode;
+  animation-fill-mode: @mode;
+}
+
+.animation-play-state(@state) {
+  -webkit-animation-play-state: @state;
+  -moz-animation-play-state: @state;
+  -o-animation-play-state: @state;
+  animation-play-state: @state;
+}

@@ -1,0 +1,45 @@
+@import "./keyframes";
+@import "./animation";
+@import "./../transform/index";
+
+.preset-shake-horizontal() {
+  .keyframes(shake-horizontal, { 10%, 90% {
+    .translate3d(-1px, 0, 0);
+  } 20%, 80% {
+      .translate3d(2px, 0, 0);
+    } 30%, 50%, 70% {
+        .translate3d(-4px, 0, 0);
+      } 40%, 60% {
+          .translate3d(4px, 0, 0);
+        } })
+}
+
+.preset-shake-horizontal__property() {
+  .animation-name(shake-horizontal);
+  .animation-fill-mode(both);
+  .animation-duration(.82s);
+  .animation-timing-function(cubic-bezier(.36, .07, .19, .97));
+  
+  .stop-flickering();
+}
+
+.preset-shake-rotate() {
+  .keyframes(shake-rotate, { 10%, 90% {
+    .rotateZ(5deg);
+  } 20%, 80% {
+      .rotateZ(-3deg);
+    } 30%, 50%, 70% {
+        .rotateZ(4deg);
+      } 40%, 60% {
+          .rotateZ(-5deg);
+        } })
+}
+
+.preset-shake-rotate__property() {
+  .animation-name(shake-rotate);
+  .animation-fill-mode(both);
+  .animation-duration(.82s);
+  .animation-timing-function(cubic-bezier(.36, .07, .19, .97));
+  
+  .stop-flickering();
+}

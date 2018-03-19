@@ -1,0 +1,94 @@
+.flex-parent() {
+  //display: -webkit-box; // OLD - iOS 6-, Safari 3.1-6 
+  //display: -moz-box; // OLD - Firefox 19- (buggy but mostly works) 
+  //display: -ms-flexbox; // TWEENER - IE 10 
+  display: -webkit-flex; // NEW - Chrome 
+  display: flex; // NEW, Spec - Opera 12.1, Firefox 20+ 
+}
+
+//nowrap | wrap | wrap-reverse
+.flex-parent-wrap(@wrap) {
+  -webkit-flex-wrap: @wrap;
+  //-ms-flex-wrap: @wrap;
+  flex-wrap: @wrap;
+}
+
+//row | row-reverse | column | column-reverse
+.flex-parent-direction(@direction) {
+  //old syntax
+  //.box-orient(@direction);
+  //new syntax
+  -webkit-flex-direction: @direction;
+  //-moz-flex-direction: @direction;
+  -ms-flex-direction: @direction;
+  flex-direction: @direction;
+}
+
+.flex-parent-row(){
+  .flex-parent-direction(row);
+}
+
+.flex-parent-column(){
+  .flex-parent-direction(column);
+}
+
+.box-orient(@direction) when (@direction = row) {
+  .box-orient(horizontal);
+}
+
+.box-orient(@direction) when (@direction = column) {
+  .box-orient(vertical);
+}
+
+.box-orient(@direction) {
+  -webkit-box-orient: @direction;
+  -moz-box-orient: @direction;
+  -ms-box-orient: @direction;
+}
+
+
+// flex-start | flex-end | center | space-between | space-around;
+
+.flex-parent-justify-content(@justify) {
+  -webkit-justify-content: @justify;
+  justify-content: @justify;
+}
+
+//flex-start | flex-end | center | baseline | stretch
+.flex-parent-align-items(@align) {
+  -webkit-align-items: @align;
+  -webkit-box-align: @align;
+  -ms-flex-align: @align;
+  align-items: @align;
+}
+
+//flex-start | flex-end | center | space-between | space-around | stretch
+.flex-parent-align-content(@align-content) {
+  -webkit-align-content: @align-content;
+  align-content: @align-content;
+}
+
+.flex-item-grow(@grow) {
+  -webkit-flex-grow: @grow;
+  flex-grow: @grow;
+}
+
+
+.flex-item(@flex) {
+  -webkit-flex: @flex;
+  -ms-flex: @flex;
+  flex: @flex;
+}
+
+.flex-item-auto() {
+  .flex-item(1 0 auto);
+}
+
+.flex-child() {
+  -webkit-flex: 1;
+  -ms-flex: 1 1 0px;
+  flex: 1;
+  -webkit-flex-basis: 0.000000001px;
+  flex-basis: 0.000000001px;
+  -webkit-box-flex: 1;
+}

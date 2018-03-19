@@ -1,0 +1,56 @@
+@import "selector";
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.placeholder(@styles) {
+  &::-webkit-input-placeholder {
+    @styles();
+  }
+  /* Firefox 19+ */
+  &::-moz-placeholder {
+    @styles();
+  }
+  /* Firefox 18- */
+  &:-moz-placeholder {
+    @styles();
+  }
+  &:-ms-input-placeholder {
+    @styles();
+  }
+}
+
+.vertical-middle(@height, @child) {
+  &:before, &:after {
+    content: '';
+    width: 0;
+    display: inline-block;
+    vertical-align: middle;
+    height: @height;
+  }
+  
+  @{child}{
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 98%;
+  }
+}
+
+.vertical-middle(@height) {
+  &:before, &:after {
+    content: '';
+    width: 0;
+    display: inline-block;
+    vertical-align: middle;
+    height: @height;
+  }
+}
+

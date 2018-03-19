@@ -1,0 +1,69 @@
+.fontImport(@name, @src, @weight, @style) {
+  @font-face {
+    font-family: @name;
+    src: @src;
+
+    font-style: @style;
+    font-weight: @weight;
+  }
+}
+
+.fontImport(@name, @src, @src2, @format2, @weight, @style) {
+  @font-face {
+    font-family: @name;
+    src: url(@src);
+    src: url(@src2) format(@format2);
+    font-style: @style;
+    font-weight: @weight;
+  }
+}
+
+.fontImport(@name, @src, @src2, @format2, @src3, @format3, @weight, @style) {
+  @font-face {
+    font-family: @name;
+    src: url(@src);
+    src: url(@src2) format(@format2)
+    , url(@src3) format(@format3);
+    font-style: @style;
+    font-weight: @weight;
+  }
+}
+
+.fontImport(@name, @src, @src2, @format2, @src3, @format3, @src4, @format4, @weight, @style) {
+  @font-face {
+    font-family: @name;
+    src: url(@src);
+    src: url(@src2) format(@format2)
+    , url(@src3) format(@format3)
+    , url(@src4) format(@format4);
+    font-style: @style;
+    font-weight: @weight;
+  }
+}
+
+.fontImport(@name, @src, @src2, @format2, @src3, @format3, @src4, @format4, @src5, @format5, @weight, @style) {
+  @font-face {
+    font-family: @name;
+    src: url(@src);
+    src: url(@src2) format(@format2)
+    , url(@src3) format(@format3)
+    , url(@src4) format(@format4)
+    , url(@src5) format(@format5);
+    font-style: @style;
+    font-weight: @weight;
+  }
+}
+
+.fontImport(@name, @src, @src2, @format2, @src3, @format3, @src4, @format4, @src5, @format5, @src6, @format6, @weight, @style) {
+  @font-face {
+    font-family: @name;
+    src: url(@src);
+    src: url(@src2) format(@format2)
+    , url(@src3) format(@format3)
+    , url(@src4) format(@format4)
+    , url(@src5) format(@format5)
+    , url(@src6) format(@format6);
+    font-style: @style;
+    font-weight: @weight;
+  }
+}
