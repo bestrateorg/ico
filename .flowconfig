@@ -10,12 +10,9 @@
 
 [options]
 # никаких пробелов до и после знака равно!!!!!
-module.name_mapper='^api\/\(.*\)$' -> '<PROJECT_ROOT>/src/js/api/\1'
+module.name_mapper='^types\/\(.*\)$' -> '<PROJECT_ROOT>/src/js/types/\1'
 module.name_mapper='^helpers\/\(.*\)$' -> '<PROJECT_ROOT>/src/js/helpers/\1'
-module.name_mapper='^components\/\(.*\)$' -> '<PROJECT_ROOT>/src/js/components/\1'
-module.name_mapper='^containers\/\(.*\)$' -> '<PROJECT_ROOT>/src/js/containers/\1'
-module.name_mapper='^constants\/\(.*\)$' -> '<PROJECT_ROOT>/src/js/constants/\1'
-module.name_mapper='^actions\/\(.*\)$' -> '<PROJECT_ROOT>/src/js/actions/\1'
-module.name_mapper='^config\/\(.*\)$' -> '<PROJECT_ROOT>/src/js/config/\1'
+module.name_mapper='^client\/\(.*\)$' -> '<PROJECT_ROOT>/src/js/client/\1'
+module.name_mapper='^server\/\(.*\)$' -> '<PROJECT_ROOT>/src/js/server/\1'
 
 

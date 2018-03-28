@@ -1,12 +1,12 @@
 {
   "name": "bestrate-widget",
-  "version": "0.1.4",
+  "version": "0.2.1",
   "description": "Widget for BestRate.org",
   "author": "Nikita Zachot <nikit@zachot.co>",
   "license": "Apache License 2.0",
   "private": true,
   "devDependencies": {
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-env": "^1.6.1",
@@ -14,30 +14,37 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "body-parser": "^1.18.2",
-    "css-loader": "^0.28.9",
-    "flow-bin": "^0.67.1",
-    "image-webpack-loader": "^4.1.0",
-    "less-loader": "^4.0.5",
+    "clean-css-loader": "^0.1.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "flow-bin": "^0.68.0",
+    "html-webpack-plugin": "^3.1.0",
+    "image-webpack-loader": "^4.2.0",
+    "less-loader": "^4.1.0",
     "raw-loader": "^0.5.1",
-    "style-loader": "^0.20.1",
+    "string-replace-loader": "^2.1.1",
+    "style-loader": "^0.20.3",
     "svg-inline-loader": "^0.8.0",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.1",
+    "webpack-dev-server": "^2",
     "webpack-strip-block": "^0.2.0"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.0",
     "immutable": "^3.8.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-redux": "^5.0.6",
+    "react-redux": "^5.0.7",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "styled-components": "^3.1.6"
+    "styled-components": "^3.2.3"
   },
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack --config webpack.config.prod.js --env.production -p"
+    "dev": "webpack-dev-server --https -d",
+    "build": "webpack --config webpack.config.prod.js -p",
+    "build-br": "webpack --config webpack.config.prod.br.js -p",
+    "build-stage": "webpack --config webpack.config.prod.br.js ---env.stage -p"
   }
 }

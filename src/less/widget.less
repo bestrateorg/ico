@@ -1,15 +1,112 @@
-@import "assets/cleanslate";
-@import "cryptocoins";
-@import "currencies";
+@import 'assets/reset';
+@import 'assets/mixins';
+@import "fonts";
 
-#bestratewidget, .bestratewidget-layout {
-  .cleanslate('Avenir Next');
+body {
+  font-family: "Avenir Next", Avenir, sans-serif;
+}
+
+.keyframes(loaders, { 0% {
+  opacity: .47;
+  .scale(4/12);
+} 50% {
+    opacity: 1;
+    .scale(1);
+  } 100% {
+      opacity: .47;
+      .scale(4/12);
+    } });
+
+@time_loaders: 1000ms;
+
+.test(@i) when (@i > 0) {
+  &:nth-child(@{i}) {
+    .animation-delay(-@time_loaders * (9 - @i / 9));
+  }
+  .test(@i - 1);
+}
+
+.empty {
+  height: 171px;
+  position: relative;
+  padding: 45px;
+  box-sizing: border-box;
   
-  //.cc_styles() !important;
-  .cc_styles_adds() !important;
+  .empty-back {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto 10px;
+    
+    width: 129px;
+    height: 36px;
+    
+    opacity: .7;
+    
+    > svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
-.bestratewidget-layout {
-  z-index: 100000000 !important;
+.error {
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  .label {
+    color: #d0021b;
+    box-sizing: border-box;
+    width: 27px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid rgb(208, 2, 27);
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 23px;
+    box-shadow: inset 0 0 5px rgba(208, 2, 27, .1);
+  }
+  
+  .message {
+    border: 1px solid #d0021b;
+    background: #d0021b;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px;
+  }
 }
 
+.loader {
+  
+  @w: 24px;
+  @m: 2px;
+  height: @w + 2 * @m;
+  width: (@w + @m*2)*7;
+  //position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+  
+  .stop-flickering();
+  > span {
+    width: @w;
+    height: @w;
+    display: block;
+    margin: @m;
+    background: #FDE033;
+    
+    .animation-name(loaders);
+    .animation-iteration-count(infinite);
+    .animation-duration(@time_loaders);
+    .animation-timing-function(linear);
+    
+    .test(7);
+  }
+  
+}

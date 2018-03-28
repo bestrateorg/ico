@@ -64,4 +64,6 @@ typings/
 .DS_Store
 .idea
 /dist
+webpack.config.prod.br.client.js
+webpack.config.prod.br.server.js
 webpack.config.prod.br.js

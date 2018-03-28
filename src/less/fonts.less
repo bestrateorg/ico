@@ -1,0 +1,20 @@
+.AvenirGen(@style, @weight, @add) {
+  @font-face {
+    font-family: "Avenir Next";
+    font-style: @style;
+    font-weight: @weight;
+    src: url('./fonts/AvenirNext/AvenirNext-@{add}.woff2') format('woff2'),
+    url('./fonts/AvenirNext/AvenirNext-@{add}.woff') format('woff'),
+    url('./fonts/AvenirNext/AvenirNext-@{add}.ttf') format('ttf'),
+    url('./fonts/AvenirNext/AvenirNext-@{add}.eot') format('eot');
+  }
+}
+
+.AvenirGen(normal, 700, Bold);
+.AvenirGen(italic, 700, BoldItalic);
+.AvenirGen(normal, 600, DemiBold);
+.AvenirGen(italic, 600, DemiBoldItalic);
+.AvenirGen(normal, 500, Medium);
+.AvenirGen(italic, 500, MediumItalic);
+.AvenirGen(normal, 400, Regular);
+.AvenirGen(italic, 400, RegularItalic);

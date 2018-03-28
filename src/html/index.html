@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+<div id="test">
+  <div id="bestrate_widget"></div>
+  <div id="bestrate_widget_2"></div>
+</div>
+<button onclick="toggle()">Hide/Show widget test</button>
+
+<script>
+  var test = document.getElementById('test');
+
+  function toggle() {
+    if (test.getAttribute('style')) {
+      test.removeAttribute('style');
+    } else {
+      test.setAttribute('style', 'display:none');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    BRWidget.init('bestrate_widget', '79d49726789347bf4b6f68549e8d98d7');
+    BRWidget.demo('bestrate_widget_2', function (data) {
+      console.log(data);
+    });
+  });
+</script>
+</body>
+</html>
